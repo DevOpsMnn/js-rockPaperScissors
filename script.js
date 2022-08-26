@@ -11,14 +11,39 @@ This should have:
     Comp paper, player scissors
 *************************************************************************************************/
 
-let computerChoice = Math.round(Math.random() * 2 + 1);
+// Constants
+const playerSelection = "rock";
+const computerChoice = getComputerChoice();
 
-if (computerChoice == 1) {
-    computerChoice = "Paper";
-} else if (computerChoice == 2) {
-    computerChoice = "Rock";
-} else {
-    computerChoice = "Scissors";
+// Let
+
+// Functions
+// Creat a random choice for the computer player
+function getComputerChoice() {
+    const computerChoice = Math.round(Math.random() * 2 + 1);
+    if (computerChoice == 1) {
+        return "paper";
+    } else if (computerChoice == 2) {
+        return "rock";
+    } else {
+        return "scissors";
+    }
 }
 
-console.log(computerChoice);
+//Create a function that playes a round
+function playRound(playerSelection, computerChoice) {
+    getComputerChoice();
+    if (computerChoice == "scissors" && playerSelection == "paper") {
+        console.log("You lose! " + computerChoice + " wins from " + playerSelection + "!"); 
+    } else if (computerChoice == "scissors" && playerSelection == "rock") {
+        console.log("You win! " + computerChoice + " wins from " + playerSelection + "!");
+    } else if (computerChoice == "paper" && playerSelection == "rock") {
+        console.log("You lose! " + computerChoice + " wins from " + playerSelection + "!");
+    } else if (computerChoice == "paper" && playerSelection == "scissors") {
+        console.log("You win! " + computerChoice + " looses from " + playerSelection + "!");
+    } else {
+        console.log("You choose the same....");
+    }
+}
+
+playRound(playerSelection, computerChoice)
