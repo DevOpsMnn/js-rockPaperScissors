@@ -2,13 +2,13 @@
 Make a variable to give the computer player a choice
 Make a if statement to determine who wins. 
 This should have:
-    Tie, try again:
-    Comp rock, player paper
-    Comp rock, player scissors
-    Comp scissors, player paper
-    Comp scissors, player rock
-    Comp paper, player rock
-    Comp paper, player scissors
+    *Tie, try again:
+    *Comp rock, player paper
+    *Comp rock, player scissors
+    *Comp scissors, player paper
+    *Comp scissors, player rock
+    *Comp paper, player rock
+    *Comp paper, player scissors
 *************************************************************************************************/
 
 // Constants
@@ -18,7 +18,7 @@ const computerChoice = getComputerChoice();
 // Let
 
 // Functions
-// Creat a random choice for the computer player
+// Create a random choice for the computer player
 function getComputerChoice() {
     const computerChoice = Math.round(Math.random() * 2 + 1);
     if (computerChoice == 1) {
@@ -41,6 +41,10 @@ function playRound(playerSelection, computerChoice) {
         console.log("You lose! " + computerChoice + " wins from " + playerSelection + "!");
     } else if (computerChoice == "paper" && playerSelection == "scissors") {
         console.log("You win! " + computerChoice + " looses from " + playerSelection + "!");
+    } else if (computerChoice == "rock" && playerSelection == "paper") {
+        console.log("You win! " + computerChoice + " looses from " + playerSelection + "!");
+    } else if (computerChoice == "rock" && playerSelection == "scissors") {
+        console.log("You lose! " + computerChoice + " wins from " + playerSelection + "!");
     } else {
         console.log("You choose the same....");
     }
