@@ -1,4 +1,5 @@
 /************************************************************************************************
+Fase 1:
 Make a variable to give the computer player a choice
 Make a if statement to determine who wins. 
 This should have:
@@ -9,45 +10,67 @@ This should have:
     *Comp scissors, player rock
     *Comp paper, player rock
     *Comp paper, player scissors
+
+Fase 2:
+*Allow player to choose a hand.
+*Make sure player input is valided.
+Make a scoring system where we keep schore of round winners and the player that
+gets to 5 wins winst the game.
+
+
 *************************************************************************************************/
-
-// Constants
-const playerSelection = "rock";
+// Variables
+let playerSelection = getPlayerChoice();
 const computerChoice = getComputerChoice();
-
-// Let
 
 // Functions
 // Create a random choice for the computer player
 function getComputerChoice() {
-    const computerChoice = Math.round(Math.random() * 2 + 1);
-    if (computerChoice == 1) {
-        return "paper";
-    } else if (computerChoice == 2) {
-        return "rock";
-    } else {
-        return "scissors";
-    }
+  const computerChoice = Math.round(Math.random() * 2 + 1);
+  if (computerChoice == 1) {
+    return "paper";
+  } else if (computerChoice == 2) {
+    return "rock";
+  } else {
+    return "scissors";
+  }
+}
+
+//Allow player to choose a hand and validates the input
+function getPlayerChoice() {
+  let askHand = prompt("What hand do you want to play? Rock, Paper or scissors?");
+  let playerSelection = askHand.toLowerCase();
+  if (playerSelection == "paper") {
+        return playerSelection;}
+    else if (playerSelection == "rock") {
+        return playerSelection;}
+    else if (playerSelection == "scissors") {
+        return playerSelection}
+    else {
+        console.log("Thats not a valid input")
+        getPlayerChoice();
+    }    
 }
 
 //Create a function that playes a round
 function playRound(playerSelection, computerChoice) {
-    getComputerChoice();
-    if (computerChoice == "scissors" && playerSelection == "paper") {
-        console.log("You lose! " + computerChoice + " wins from " + playerSelection + "!"); 
-    } else if (computerChoice == "scissors" && playerSelection == "rock") {
-        console.log("You win! " + computerChoice + " wins from " + playerSelection + "!");
-    } else if (computerChoice == "paper" && playerSelection == "rock") {
-        console.log("You lose! " + computerChoice + " wins from " + playerSelection + "!");
-    } else if (computerChoice == "paper" && playerSelection == "scissors") {
-        console.log("You win! " + computerChoice + " looses from " + playerSelection + "!");
-    } else if (computerChoice == "rock" && playerSelection == "paper") {
-        console.log("You win! " + computerChoice + " looses from " + playerSelection + "!");
-    } else if (computerChoice == "rock" && playerSelection == "scissors") {
-        console.log("You lose! " + computerChoice + " wins from " + playerSelection + "!");
-    } else {
-        console.log("You choose the same....");
-    }
+  console.log("The computer chooses " + computerChoice + " and you went for " + playerSelection +
+"!"
+  );
+
+if (computerChoice == "scissors" && playerSelection == "paper") 
+    {console.log("You lose! " + computerChoice + " wins from " + playerSelection + "!");
+} else if (computerChoice == "scissors" && playerSelection == "rock") 
+    {console.log("You win! " + computerChoice + " wins from " + playerSelection + "!");
+} else if (computerChoice == "paper" && playerSelection == "rock") 
+    {console.log("You lose! " + computerChoice + " wins from " + playerSelection + "!");
+} else if (computerChoice == "paper" && playerSelection == "scissors") 
+    {console.log("You win! " + computerChoice + " looses from " + playerSelection + "!");
+} else if (computerChoice == "rock" && playerSelection == "paper") 
+    {console.log("You win! " + computerChoice + " looses from " + playerSelection + "!");
+} else if (computerChoice == "rock" && playerSelection == "scissors") 
+    {console.log("You lose! " + computerChoice + " wins from " + playerSelection + "!");
+} else { console.log("Draw! Try again!");}
 }
 
-playRound(playerSelection, computerChoice)
+playRound(playerSelection, computerChoice);
