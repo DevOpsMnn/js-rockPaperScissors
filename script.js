@@ -22,6 +22,8 @@ gets to 5 wins winst the game.
 // Variables
 let playerSelection = getPlayerChoice();
 const computerChoice = getComputerChoice();
+let playerScore = 0;
+let computerScore = 0;
 
 // Functions
 // Create a random choice for the computer player
@@ -48,29 +50,52 @@ function getPlayerChoice() {
         return playerSelection}
     else {
         console.log("Thats not a valid input")
-        getPlayerChoice();
     }    
 }
 
 //Create a function that playes a round
 function playRound(playerSelection, computerChoice) {
-  console.log("The computer chooses " + computerChoice + " and you went for " + playerSelection +
-"!"
-  );
+        if (computerChoice == "scissors" && playerSelection == "paper") 
+        {
+            console.log("You lose! " + computerChoice + " wins from " + playerSelection + "!");
+            computerScore ++;
+            console.log("Computer score: " + computerScore + " - Player Score: " + playerScore + "!");
+        } 
+        else if (computerChoice == "scissors" && playerSelection == "rock") 
+        {
+            console.log("You win! " + computerChoice + " wins from " + playerSelection + "!");
+            playerScore ++;
+            console.log("Computer score: " + computerScore + " - Player Score: " + playerScore + "!");
+        } 
+        else if (computerChoice == "paper" && playerSelection == "rock") 
+        {
+            console.log("You lose! " + computerChoice + " wins from " + playerSelection + "!");
+            computerScore ++;
+            console.log("Computer score: " + computerScore + " - Player Score: " + playerScore + "!");    
+        } 
+        else if (computerChoice == "paper" && playerSelection == "scissors") 
+        {
+            console.log("You win! " + computerChoice + " looses from " + playerSelection + "!");
+            playerScore ++;
+            console.log("Computer score: " + computerScore + " - Player Score: " + playerScore + "!");
+        } 
+        else if (computerChoice == "rock" && playerSelection == "paper")
+        {
+            console.log("You win! " + computerChoice + " looses from " + playerSelection + "!");
+            playerScore ++;
+            console.log("Computer score: " + computerScore + " - Player Score: " + playerScore + "!");
+        } 
+        else if (computerChoice == "rock" && playerSelection == "scissors") 
+        {
+            console.log("You lose! " + computerChoice + " wins from " + playerSelection + "!");
+            computerScore ++;
+            console.log("Computer score: " + computerScore + " - Player Score: " + playerScore + "!");
+        } 
+        else 
+        { 
+            console.log("Draw! Try again!");
+        }
+    }
 
-if (computerChoice == "scissors" && playerSelection == "paper") 
-    {console.log("You lose! " + computerChoice + " wins from " + playerSelection + "!");
-} else if (computerChoice == "scissors" && playerSelection == "rock") 
-    {console.log("You win! " + computerChoice + " wins from " + playerSelection + "!");
-} else if (computerChoice == "paper" && playerSelection == "rock") 
-    {console.log("You lose! " + computerChoice + " wins from " + playerSelection + "!");
-} else if (computerChoice == "paper" && playerSelection == "scissors") 
-    {console.log("You win! " + computerChoice + " looses from " + playerSelection + "!");
-} else if (computerChoice == "rock" && playerSelection == "paper") 
-    {console.log("You win! " + computerChoice + " looses from " + playerSelection + "!");
-} else if (computerChoice == "rock" && playerSelection == "scissors") 
-    {console.log("You lose! " + computerChoice + " wins from " + playerSelection + "!");
-} else { console.log("Draw! Try again!");}
-}
 
 playRound(playerSelection, computerChoice);
