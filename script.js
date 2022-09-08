@@ -44,10 +44,12 @@ function game(e) {
   let playedRound = playRound(e, computerChoice);
   console.log("Computer chooses " + computerChoice + " and player chooses " + e + ".");
   if (playedRound == 2) {
-    console.log("Draw!");
+    document.getElementById("results").innerHTML = "You played " + e + " and the computer went for " + computerChoice + " It's a draw!";
   } else if (playedRound == 1) {
-    console.log("Player Wins!")
+    document.getElementById("results").innerHTML =  "You played " + e + " and the computer went for " + computerChoice +
+    "! You Win!";;
   } else {
-    console.log("Computer Wins!")
+    document.getElementById("results").textContent = "You played " + e + " and the computer went for " + computerChoice +
+     "! Computer Wins!";
   }
 }

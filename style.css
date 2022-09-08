@@ -1,11 +1,38 @@
 * {
-    background-color: black;
+    background-color: silver;
     font-family: 'Roboto', sans-serif;
+    padding:0;
+}
+
+#main-wrapper {
+    display:flex;
+    max-width:50em;
+    justify-content: center;
+    margin:0 auto;
 }
 
 button {
-    background:grey;
-    width:5em;
-    height:2em;
+    background:white;
+    width:10em;
+    height:3em;
     font-weight:bold;
+    margin:3em;
 }
+
+h1 {
+    text-align: center;
+    margin-top:2em;
+}
+
+#buttons {
+    display: flex;
+    margin-top:.5em;
+    justify-content: space-around;
+}
+
+#results{
+    display:flex;
+    justify-content: center;
+    font-size:large;
+}
+
