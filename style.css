@@ -1,10 +1,11 @@
 * {
-    background-color: silver;
+    background-color: #602B57;
     font-family: 'Roboto', sans-serif;
     padding:0;
+    color:white;
 }
 
-#main-wrapper {
+#button-wrapper {
     display:flex;
     max-width:50em;
     justify-content: center;
@@ -12,14 +13,26 @@
 }
 
 button {
-    background:white;
+    background:#602B57;
     width:10em;
+    border:none;
+    border-radius:.5em;
+    border:2px solid white;
+    color:white;
     height:3em;
     font-weight:bold;
     margin:3em;
 }
 
-h1 {
+button:hover {
+    background-color: white;
+    color:#602B57;
+    border:2px solid white;
+}
+
+
+h1, h3 {
+    color:white;
     text-align: center;
     margin-top:2em;
 }
@@ -34,5 +47,13 @@ h1 {
     display:flex;
     justify-content: center;
     font-size:large;
+    color:white;
+    min-height:3em;
 }
 
+#score {
+    display:flex;
+    justify-content:space-evenly;
+    max-width:40em;
+    margin:0 auto;
+}
