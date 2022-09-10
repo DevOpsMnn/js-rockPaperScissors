@@ -1,7 +1,10 @@
+let playerScore =  0;
+let computerScore = 0;
+
 const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
-    game(button.id);
+    playRound(button.id);
   });
 });
 
@@ -37,20 +40,26 @@ function playRound(e){
   } else if (playedRound == 1) {
       document.getElementById("results").innerHTML =
       "You played " + e + " and the computer went for " + computerChoice + "! You Win!";
+      playerScore ++;
   } else {
       document.getElementById("results").textContent =
       "You played " + e + " and the computer went for " + computerChoice + "! Computer Wins!";
+      computerScore ++;
   }
+  document.getElementById("playerScore").textContent = "Player Score: " + playerScore;
+  document.getElementById("computerScore").textContent = "Computer Score: " + computerScore;  
+  game()
 }
 
 function game(e){
-  let playerScore =  0;
-  let computerScore = 0;
-  if (playerScore = 3 ){    
-    console.log("Player Wins!", playerScore, computerScore);
-  } else if (computerScore = 3) {
-    console.log("Computer Wins!", playerScore, computerScore);
-  } else {
-    playRound(e);
+  if (playerScore == 3 || computerScore == 3 ){  
+    if (playerScore > computerScore){
+      document.getElementById("matchWinner").textContent = "You win! Press F5 to play again!";
+    } else if (computerScore > playerScore) {
+      console.log("Computer Wins!", playerScore, computerScore);
+      document.getElementById("matchWinner").textContent = "You lose! Press F5 to play again!";
+      playRound(e);
+    }
   }
+  
 }

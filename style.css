@@ -57,3 +57,14 @@ h1, h3 {
     max-width:40em;
     margin:0 auto;
 }
+
+#matchWinner {
+    display:flex;
+    justify-content: center;
+    min-height: 3em;
+}
+
+#end {
+    display:flex;
+    justify-content: center;
+}
